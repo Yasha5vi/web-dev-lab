@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        td{
+            width: 80px;
+            height: 50px;
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 2px;
+        }
+        .display{
+            height: 80px;
+        }
+        table{
+            padding: 3px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+        .btn{
+            height: 100%;
+            width: 100%;
+            border: none;
+            background-color:unset;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td class="display" colspan="4"></td>
+        </tr>
+        <tr>
+            <td><input class="btn" type="button" value="7" onclick="addVal(this)"></td>
+            <td><input class="btn" type="button" value="8" onclick="addVal(this)"></td>
+            <td><input class="btn" type="button" value="9" onclick="addVal(this)"></td>
+            <td><input class="btn" type="button" value="+" onclick="addVal(this)"></td>
+        </tr>
+        <tr>
+            <td><input class="btn" type="button" value="4" onclick="addVal(this)"></td>
+            <td><input class="btn" type="button" value="5" onclick="addVal(this)"></td>
+            <td><input class="btn" type="button" value="6" onclick="addVal(this)"></td>
+            <td><input class="btn" type="button" value="-" onclick="addVal(this)"></td>
+        </tr>
+        <tr>
+            <td><input class="btn" type="button" value="1" onclick="addVal(this)"></td>
+            <td><input class="btn" type="button" value="2" onclick="addVal(this)"></td>
+            <td><input class="btn" type="button" value="3" onclick="addVal(this)"></td>
+            <td><input class="btn" type="button" value="*" onclick="addVal(this)"></td>
+        </tr>
+        <tr>
+            <td><input class="btn" type="button" value="0" onclick="addVal(this)"></td>
+            <td><input class="btn" type="button" value="." onclick="addVal(this)"></td>
+            <td><input class="btn" type="button" value="=" onclick="addVal(this)"></td>
+            <td><input class="btn" type="button" value="/" onclick="addVal(this)"></td>
+        </tr>
+        <tr>
+            <td colspan="4"><input class="btn" type="button" value="Clear"></td>
+        </tr>
+    </table>
+</body>
+<script src="index.js"></script>
+</html>
