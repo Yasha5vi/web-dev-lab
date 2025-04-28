@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predefined Functions</title>
+  <style>
+    body {
+      text-align: center;
+      margin-top: 50px;
+      font-family: Arial, sans-serif;
+    }
+    .button {
+      background-color: #0d6efd;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 10px 0;
+      width: 200px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Predefined Functions</h1>
+
+  <button class="button" onclick="alert('This is an alert!')">Alert</button><br>
+  <button class="button" onclick="getUserName()">Prompt</button><br>
+  <button class="button" onclick="confirmAction()">Confirm</button><br>
+  <button class="button" onclick="openNewWindow()">Open Window</button><br>
+  <button class="button" onclick="closeWindow()">Close Window</button><br>
+  <button class="button" onclick="window.print()">Print Page</button>
+
+  <script>
+    function getUserName() {
+      let name = prompt("Enter your name");
+      if (name) alert("Hello, " + name + "!");
+    }
+
+    function confirmAction() {
+      let isConfirmed = confirm("Proceed?");
+      alert(isConfirmed ? "Proceeding!" : "Canceled.");
+    }
+
+    function openNewWindow() {
+      window.open("https://example.com", "_blank");
+    }
+
+    function closeWindow() {
+      window.close();
+    }
+  </script>
+
+</body>
+</html>
