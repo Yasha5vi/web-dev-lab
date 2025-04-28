@@ -1,0 +1,7 @@
+Step 1: Open XAMPP Panel
+Step 2: Start Apache and MySql server
+Step 3: Create a .php file
+Step 4: Open explorer in XAMPP Control Panel
+Step 5: Open htdoc folder and paste the create file here
+Step 6: Now go to any browser 
+Step 7: go to link http://localhost/fileName.php
