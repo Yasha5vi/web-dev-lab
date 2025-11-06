@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calendar Viewer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 30px;
+    }
+    select, button {
+      padding: 8px 12px;
+      margin: 5px;
+      font-size: 16px;
+    }
+    table {
+      margin: 20px auto;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+    }
+    th {
+      background-color: #007bff;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Calendar Viewer</h1>
+
+  <select id="month"></select>
+  <select id="year"></select>
+  <button onclick="showCalendar()">Show Calendar</button>
+
+  <div id="calendar"></div>
+
+  <script>
+    const monthSelect = document.getElementById('month');
+    const yearSelect = document.getElementById('year');
+
+    const months = ["January", "February", "March", "April", "May", "June",
+                    "July", "August", "September", "October", "November", "December"];
+
+    for (let i = 0; i < months.length; i++) {
+      let option = document.createElement('option');
+      option.value = i;
+      option.text = months[i];
+      monthSelect.add(option);
+    }
+
+    const currentYear = new Date().getFullYear();
+    for (let y = currentYear - 50; y <= currentYear + 10; y++) {
+      let option = document.createElement('option');
+      option.value = y;
+      option.text = y;
+      yearSelect.add(option);
+    }
+
+    monthSelect.value = new Date().getMonth();
+    yearSelect.value = currentYear;
+
+    function showCalendar() {
+      const month = parseInt(monthSelect.value);
+      const year = parseInt(yearSelect.value);
+
+      const firstDay = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+      let table = "<table>";
+      table += "<tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr><tr>";
+
+      for (let i = 0; i < firstDay; i++) {
+        table += "<td></td>";
+      }
+
+      for (let day = 1; day <= daysInMonth; day++) {
+        table += `<td>${day}</td>`;
+        if ((day + firstDay) % 7 === 0) {
+          table += "</tr><tr>";
+        }
+      }
+
+      table += "</tr></table>";
+
+      document.getElementById('calendar').innerHTML = table;
+    }
+
+    showCalendar();
+  </script>
+
+</body>
+</html>

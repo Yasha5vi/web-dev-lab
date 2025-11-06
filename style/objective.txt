@@ -1,0 +1,1 @@
+in the resume.html use inline external and internal styling 
